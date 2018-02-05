@@ -1,2 +1,4 @@
 # uavn-TSIP
-TSIP parser implementation
+Juast a TSIP parser implementation (see pdfs)
+
+Compiled whit mingw (Dev c++)
