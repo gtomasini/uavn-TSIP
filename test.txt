@@ -1,0 +1,92 @@
+//data for testing ad hoc (invented)
+//garbage
+buff[0]=0;
+buff[1]=0;
+buff[2]=0x10;//DLE
+buff[3]=0x10;//DLE
+buff[4]=5;
+//packet #1 begins------------------
+buff[5]=0x10;//DLE -> START
+buff[6]=6;
+buff[7]=7;
+buff[8]=8;
+buff[9]=9;*/
+======================return 10;//==============
+		
+buff[0]=0x0a;
+buff[1]=0x10;//DLE
+buff[2]=0x10;//DLE
+//CRC 20 75 86 f8
+buff[3]=0x20;
+buff[4]=0x75;
+buff[5]=0x86;
+buff[6]=0xf8;
+buff[7]=0x10;//DLE
+buff[8]=0x03;//ETX -> END packet#1
+//packet #1 ends------------------
+buff[9]=0x10;//DLE -> START packet#2
+======================return 10;//==================
+
+buff[0]=20;//0x14
+buff[1]=21;
+buff[2]=22;
+buff[3]=23;
+//CRC 5f 4e 99 7b
+buff[4]=0x5f;
+buff[5]=0x4e;
+buff[6]=0x99;
+buff[7]=0x7b;
+buff[8]=0x10;//DLE, off 28
+buff[9]=0x03;//ETX -> END second
+=======================return 10;//==================
+
+//packet #3, off 30 --------------------------
+buff[0]=0x10;//DLE ---> start
+buff[1]=30;//0x1e
+buff[2]=31;//0x1f
+// CRC d5 20 90 18
+buff[3]=0xd5;
+buff[4]=0x20;
+buff[5]=0x90;
+buff[6]=0x18;
+buff[7]=0x10;//DLE
+buff[8]=0x03;//ETX --> END third
+
+//off 39
+buff[9]=0x10;//DLE --> START
+//off 50
+buff[10]=40;
+buff[11]=41;
+buff[12]=42;
+buff[13]=43;
+buff[14]=44;
+//CRC d0 21 db 9b
+buff[15]=0xd0;
+buff[16]=0x21;
+buff[17]=0xdb;
+buff[18]=0x9b;
+buff[19]=0x10;//DLE ********
+		return 20;
+	
+
+buff[0]=0x03;//ETX ----> END
+
+buff[1]=0x10;//DLE ----> START
+buff[2]=52;
+buff[3]=53;
+buff[4]=54;
+buff[5]=55;
+buff[6]=56;
+buff[7]=57;
+buff[8]=0x10;//DLE
+buff[9]=0x10;//DLE
+buff[10]=58;//0x3A
+
+buff[12]=0x4d;
+buff[13]=0x37;
+buff[14]=0xcd;
+buff[15]=0x10;//DLE
+buff[16]=0x03;//ETX --> END fourth
+buff[17]=0x10;//DLE --> START
+		return 17;
+	
