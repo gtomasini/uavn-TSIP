@@ -1,3 +1,5 @@
+#ifndef MYLOG_H
+#define MYLOG_H
 #include <time.h> // time_t, tm, time, localtime, strftime
 #include <stdio.h>
 #include <string.h>
@@ -23,6 +25,6 @@ char* getFormattedTime(void);
 #define LOGERROR(format, ...) __LOG__(format, "ERROR", ## __VA_ARGS__)
 #define LOGINFO(format, ...) __LOG__(format, "INFO", ## __VA_ARGS__)
 
-
+#endif
 
 

@@ -1,3 +1,6 @@
+#ifndef PARSER_H
+#define PARSER_H
+
 #include <cstdint>
 #include <stdlib.h>
 #include <stdio.h>
@@ -15,7 +18,7 @@ int32_t uavnComRead(uint8_t* const buff, const uint32_t count);
 class Parser{
 	public:
 
-	Parser(int32_t n);
+	Parser(uint32_t n);
 
 	const uint8_t DLE=0x10;
 	const uint8_t ETX=0x03;
@@ -37,7 +40,7 @@ class Parser{
 	void processing();
 	
 	//convert littleIndian to host byte order, in this case (Intel) it's not mandatory	
-	uint32_t littleIndian2host(uint32_t littleIndian){
+	inline uint32_t littleIndian2host(uint32_t littleIndian){
 		uint8_t	aux32[4], bigEndianCRC[4];
 
 		memcpy(aux32, &littleIndian, 4);
@@ -53,6 +56,7 @@ class Parser{
 	int deliverPacket(uint32_t off0, uint32_t offF);
 	//resize buffer
 	int resize();
+	int resize(uint8_t newsize);
 	
 	//shift to 0 pos incomplete pack in order to get free buffer
 	int shiftIncompletePack();
@@ -61,3 +65,4 @@ class Parser{
 	virtual ~Parser(){free(buff);free(finalBuff);};
 };
 
+#endif
